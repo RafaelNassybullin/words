@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-bottom: 150px;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 45px;
+  margin-bottom: 25px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.tickets {
+  outline: none;
+  border-radius: 50%;
+
+  border: 2px solid #EF3860;
+  width: 70px;
+  height: 70px;
+  font-size: 22px;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tickets.inactive {
+  cursor: unset;
+  color: grey;
+  border: 2px solid grey;
+}
+
+.wrapper-tickets {
+  display: flex;
+  gap: 11px;
+  justify-content:space-between;
+  flex-wrap: wrap;
+}
+
+.tickets.check {
+  width: 100%;
+  border-radius: 50px;
+  margin-bottom: 25px;
+}
+
+.modal-all-test {
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-overlay {
+  backdrop-filter: none;
+}
+
+.modal-all-test .modal {
+  position: relative;
+  max-width: 700px;
+  width: 700px;
+  height: 314px;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 15px;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #EF3860; 
+  padding: 20px;
+}
+
+.confirm {
+  position: absolute;
+  bottom: 22px;
+  right: 22px;
+  background-color: #1D82F4;
+  color: white;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  border-radius: 7px;
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+}
+ 
+.confirm:hover {
+  background-color: #63A7F4;
+}
+
+.modal-all-test .modal.full-test {
+  justify-content: unset;
+}
+
+.question {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+.variants {
+  font-size: 14px;
+  padding: 7px;
+  margin-top: 12px;
+}
+
+.test-answers-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-all-test .modal span {
+  position: absolute;
+  cursor: pointer;
+  font-size: 25px;
+  top: 7px;
+  right: 18px;
+}
+
+.sure {
+  font-size: 25px;
+}
+
+.yesno {
+  font-size: 25px;
+  padding: 28px;
+}
+
+.back-tickets {
+  margin-bottom: 25px;
+  cursor: pointer;
+  width: 90px;
+  font-size: 19px;
+}
+
+.chance {
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+}
+
+.chance img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modal-all-test .modal .chances-modal {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width:120px;
+  height: 40px;
+}
+
+.progress-modal {
+  position: absolute;
+  left: 50%;
+  top: 320px;
+  transform: translateX(-50%);
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-color: blue;
+  border-radius: 7px;
+  border: 2px solid gray;
+  margin-top: 7px;
+}
+
+.input-wrapper input {
+  padding-left: 7px;
+  border-radius: 7px;
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.input-wrapper .list {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  border-radius: 7px;
+  width: 100%;
+  border: 1px solid gray;
+  height: 190px;
+  z-index: 10;
+  background-color: white;
+  padding: 6px;
+  overflow-y: scroll;
+}
+
+.input-wrapper .list .item {
+  width: 100%;
+  background-color: #EEEEEE;
+  height: 40px;
+  border-radius: 3.5px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 17px;
+  margin-bottom: 3px;
+  cursor: pointer;
+} 
+
+.loader {
+  width: 25px;
+  height: 25px;
+  border: 3px solid #ddd;
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.confirm.inactive {
+  background-color: gray;
+}
