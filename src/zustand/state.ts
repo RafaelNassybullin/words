@@ -126,9 +126,7 @@ export const useFilms = create<any>()(
       closePageTicketTest: () => {
         set({ pageTicketTest: false })
       },
-      closeModalTicketTest: () => {
-        set({ modalTicketTest: false, closedOutPageTicket: true })
-      },
+
       createTicketsTest: () => {
         const state = get();
         const entries = Object.entries(state.allData);
@@ -136,10 +134,23 @@ export const useFilms = create<any>()(
         const totalPages = Math.ceil(totalItems / PAGE_SIZE);
         set({ ticketsTest: totalPages });
       },
-      createTicketQuestion: (ticket: number) => {
-        set({ modalTicketTest: true });
 
+      closeModalTicketTest: () => {
+        set({
+          modalTicketTest: false,
+          modalTicketTestCount: 0,
+          totalTicketsTest: 0,
+          excludedTicketTest: [],
+          createdTicketTestQuestion: null,
+          availableTicketQuestions: {},
+          chances: 3,
+          progressTicketsTest: 1,
+        })
+      },
+      createTicketQuestion: (ticket: number) => {
+        set({ modalTicketTest: true, progressTicketsTest: ticket });
         const state = get();
+
         if (state.closedOutPageTicket === false) {
           let currentTicket = ticket;
 
@@ -338,7 +349,14 @@ export const useFilms = create<any>()(
     })),
     {
       name: "words",
-      partialize: ({ allData, ...state }) => state,
+      partialize: ({ allData,
+
+
+
+
+
+
+        ...state }) => state,
     }
   ));
 
