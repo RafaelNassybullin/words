@@ -39,11 +39,11 @@ export function App() {
         >
           <thead>
             <tr>
-              <th style={{ border: "1px solid black", padding: "8px" }}>
+              <th style={{ border: "1px solid white", padding: "8px" }}>
                 English
               </th>
 
-              <th style={{ border: "1px solid black", padding: "8px" }}>
+              <th style={{ border: "1px solid white", padding: "8px" }}>
                 Русский
               </th>
             </tr>
@@ -51,11 +51,11 @@ export function App() {
           <tbody>
             {Object.entries(paginated).map(([eng, ru]: any) => (
               <tr key={eng}>
-                <td style={{ border: "1px solid black", padding: "8px" }}>
+                <td style={{ border: "1px solid white", padding: "8px" }}>
                   {eng}
                 </td>
 
-                <td style={{ border: "1px solid black", padding: "8px" }}>
+                <td style={{ border: "1px solid white", padding: "8px" }}>
                   {ru}
                 </td>
               </tr>
