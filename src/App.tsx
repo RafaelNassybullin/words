@@ -42,7 +42,6 @@ export function App() {
               <th style={{ border: "1px solid white", padding: "8px" }}>
                 English
               </th>
-
               <th style={{ border: "1px solid white", padding: "8px" }}>
                 Русский
               </th>
@@ -70,10 +69,8 @@ export function App() {
           {
             Array(ticketsTest).fill("").map((_, i) => (
               <button key={i + 1} onClick={() => {
-                if (progressTicketsTest === i + 1) {
-                  createTicketQuestion(i + 1);
-                }
-              }} className={i + 1 <= progressTicketsTest ? "tickets" : "tickets inactive"}>{i + 1}</button>
+                createTicketQuestion(i + 1);
+              }} className={"tickets"}>{i + 1}</button>
             ))
           }
         </div>}
